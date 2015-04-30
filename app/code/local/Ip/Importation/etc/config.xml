@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<config>
+
+    <modules>
+        <Ip_Importation>
+            <version>0.1.0</version>
+        </Ip_Importation>
+    </modules>
+
+    <global>
+        <blocks>
+            <importation>
+                <class>Ip_Importation_Block</class>
+            </importation>
+        </blocks>
+        <models>
+            <importation>
+                <class>Ip_Importation_Model</class>
+            </importation>
+        </models>
+    </global>
+
+    <admin>
+        <routers>
+            <importation>
+                <use>admin</use>
+                <args>
+                    <module>Ip_Importation_Adminhtml</module>
+                    <frontName>import</frontName>
+                </args>
+            </importation>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <importation>
+                    <file>importation.xml</file>
+                </importation>
+            </updates>
+        </layout>
+    </adminhtml>
+    <crontab>
+        <jobs>
+            <importationcron>
+                <schedule><cron_expr>* * * * *</cron_expr></schedule>
+                <run><model>importation/products::cron</model></run>
+            </importationcron>
+        </jobs>
+    </crontab>
+
+
+</config>

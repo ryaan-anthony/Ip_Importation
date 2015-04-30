@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<layout>
+    <importation_products_index>
+        <reference name="content">
+            <block type="importation/adminhtml_products" name="importation">
+                <block type="adminhtml/template" name="example" template="importation/products/example.phtml" />
+            </block>
+        </reference>
+    </importation_products_index>
+</layout>
